@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,6 +45,8 @@ public class QuizMainActivity extends AppCompatActivity
     ProgressDialog mProgressDialog;
     ProgressBar mProgressBarQuiz;
     TextView txtQno, txtQueTitle;
+    static int score;
+    QuizQuestions currentQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -124,7 +127,28 @@ public class QuizMainActivity extends AppCompatActivity
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
+                String ans="";
+                switch (checkedId)
+                {
+                    case R.id.rbOption1:
+                        ans = rbOption1.getText().toString();
+                        break;
+                    case R.id.rbOption2:
+                        ans = rbOption2.getText().toString();
+                        break;
+                    case R.id.rbOption3:
+                        ans = rbOption3.getText().toString();
+                        break;
+                    case R.id.rbOption4:
+                        ans = rbOption4.getText().toString();
+                        break;
+                }
 
+                if(currentQuestion.getCorrectAnswer().equalsIgnoreCase(ans))
+                {
+                    score++;
+                }
+                Log.d("RES", "onCheckedChanged: " + ans + "[" + score + "]");
             }
         });
     }
@@ -167,12 +191,6 @@ public class QuizMainActivity extends AppCompatActivity
                     timerThread.start();
                     break;
 
-
-                //case btnShowDialog:
-                //    MyDialogFragment dialogFragment = new MyDialogFragment();
-                //    dialogFragment.show(getSupportFragmentManager(),"Test");
-                //    break;
-
                 default:
                     Toast.makeText(getApplicationContext(),((Button)v).getText().toString(),Toast.LENGTH_SHORT).show();
 
@@ -194,8 +212,7 @@ public class QuizMainActivity extends AppCompatActivity
                     {
                         dialog.dismiss();
                         finish();
-                        Intent intent = new Intent(getApplicationContext(),QuizResultActivity.class);
-                        startActivity(intent);
+                        sendResult();
                     }
                 })
                 .setMessage("You will end the quiz!!!");
@@ -211,17 +228,20 @@ public class QuizMainActivity extends AppCompatActivity
             currentQue++;
             mProgressBarQuiz.setProgress(currentQue);
             txtQno.setText(currentQue + "/" + queList.size());
-            QuizQuestions question = queList.get(c);
+            currentQuestion = queList.get(c);
             txtQueTitle.setText("[ Q : " + currentQue + " ] ");
-            txtQue.setText(question.getQuestion());
-            rbOption1.setText(question.getOptions1());
-            rbOption2.setText(question.getOptions2());
-            rbOption3.setText(question.getOptions3());
-            rbOption4.setText(question.getOptions4());
+            txtQue.setText(currentQuestion.getQuestion());
+
+            mRadioGroup.clearCheck();
+
+            rbOption1.setText(currentQuestion.getOptions1());
+            rbOption2.setText(currentQuestion.getOptions2());
+            rbOption3.setText(currentQuestion.getOptions3());
+            rbOption4.setText(currentQuestion.getOptions4());
             mCountDownTimer.start();
         }else
         {
-            mProgressDialog.setMessage("Wait!!! Saving results....");
+            mProgressDialog.setMessage("Cool!!! Preparing results....");
             mProgressDialog.show();
             Thread timerThread = new Thread(){
                 public void run(){
@@ -237,8 +257,7 @@ public class QuizMainActivity extends AppCompatActivity
                             {
                                 mProgressDialog.hide();
                                 finish();
-                                Intent intent = new Intent(getApplicationContext(),QuizResultActivity.class);
-                                startActivity(intent);
+                                sendResult();
                             }
                         });
                     }
@@ -246,6 +265,12 @@ public class QuizMainActivity extends AppCompatActivity
             };
             timerThread.start();
         }
+    }
+
+    private void sendResult() {
+        Intent intent = new Intent(getApplicationContext(),QuizResultActivity.class);
+        intent.putExtra("result",score);
+        startActivity(intent);
     }
 
     private void blinkText(){
