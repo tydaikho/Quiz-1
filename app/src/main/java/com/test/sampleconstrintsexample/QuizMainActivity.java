@@ -62,8 +62,6 @@ public class QuizMainActivity extends AppCompatActivity
         blinkText();
         getUniqueRandomNumbers();
         getNextQuestion();
-
-        anim.setRepeatCount(0);
     }
 
     private void intiActionBar()
@@ -279,6 +277,7 @@ public class QuizMainActivity extends AppCompatActivity
         anim.setDuration(50); //You can manage the blinking time with this parameter
         anim.setStartOffset(20);
         anim.setRepeatMode(Animation.REVERSE);
+        anim.setRepeatCount(Animation.INFINITE);
         txtTimer.setAnimation(anim);
     }
 
