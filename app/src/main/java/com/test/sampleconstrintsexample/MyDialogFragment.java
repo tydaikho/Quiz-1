@@ -27,18 +27,13 @@ public class MyDialogFragment extends DialogFragment implements DialogInterface.
     @Override
     public void onClick(DialogInterface dialog, int which)
     {
-        switch (which)
+        if(which == Dialog.BUTTON_POSITIVE)
         {
-            case Dialog.BUTTON_POSITIVE:
-                Toast.makeText(getActivity(),"OK",Toast.LENGTH_SHORT).show();
-                break;
-
-            case DialogInterface.BUTTON_NEGATIVE:
-                Toast.makeText(getActivity(),"Cancel",Toast.LENGTH_SHORT).show();
-                break;
-                
-            default:
-                break;
+               Toast.makeText(getActivity(),"OK",Toast.LENGTH_SHORT).show();
+        }
+        else if(which == DialogInterface.BUTTON_NEGATIVE)
+        {
+               Toast.makeText(getActivity(),"Cancel",Toast.LENGTH_SHORT).show();
         }
     }
 }
