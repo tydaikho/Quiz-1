@@ -36,6 +36,9 @@ public class MyDialogFragment extends DialogFragment implements DialogInterface.
             case DialogInterface.BUTTON_NEGATIVE:
                 Toast.makeText(getActivity(),"Cancel",Toast.LENGTH_SHORT).show();
                 break;
+                
+            default:
+                break;
         }
     }
 }
