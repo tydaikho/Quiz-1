@@ -13,25 +13,25 @@ Simple QUIZ application to demonstrate some andoid features
   - Layout designs
   - ActionBar options
   
-  
-   11  git clone https://github.com/pritamworld/Quiz.gi
-   20  git status
-   21  git config --global user.name
-   22  git config --global user.name "Your Name"
-   23  git config --global user.name
-   24  git -A
-   25  git add -A
-   26  git status
-   27  git commit -m "Test commit by Yash Garg"
-   28  git status
-   29  git push origin master
-   32  git config --global user.name
-   33  git push origin master
-   34  git config --list
-   35  git config user.email
-   36  git config --global user.email "Your Email address on Github"
-   37  git config user.email
-   38  git status
-   40  git add -A
-   41  git commit -m "Test update"
-   42  git push origin master
+  ##Git Command Line 
+  - git clone https://github.com/pritamworld/Quiz.git
+  - git status
+  - git config --global user.name
+  - git config --global user.name "Your Name"
+  - git config --global user.name
+  - git -A
+  - git add -A
+  - git status
+  - git commit -m "Test commit by Yash Garg"
+  - git status
+  - git push origin master
+  - git config --global user.name
+  - git push origin master
+  - git config --list
+  - git config user.email
+  - git config --global user.email "Your Email address on Github"
+  - git config user.email
+  - git status
+  - git add -A
+  - git commit -m "Test update"
+  - git push origin master
