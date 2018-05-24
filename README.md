@@ -13,7 +13,7 @@ Simple QUIZ application to demonstrate some andoid features
   - Layout designs
   - ActionBar options
   
-  ##Git Command Line 
+  ## Git Command Line 
   - git clone https://github.com/pritamworld/Quiz.git
   - git status
   - git config --global user.name
