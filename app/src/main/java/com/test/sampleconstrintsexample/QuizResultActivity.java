@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
-
+//Comment added by Yash Garg on 24th May 2018 for testing git command
 public class QuizResultActivity extends AppCompatActivity
 {
     TextView txtScore, txtResult, txtGreetings;
