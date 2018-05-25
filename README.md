@@ -16,17 +16,18 @@ Simple QUIZ application to demonstrate some andoid features
   ## Git Command Line 
   - git clone https://github.com/pritamworld/Quiz.git
   - git status
+  
+  ## Set User Name
   - git config --global user.name
   - git config --global user.name "Your Name"
   - git config --global user.name
-  - git -A
   - git add -A
   - git status
-  - git commit -m "Test commit by Yash Garg"
+  - git commit -m "Your commmit message"
   - git status
   - git push origin master
-  - git config --global user.name
-  - git push origin master
+  
+  ## Set User Email 
   - git config --list
   - git config user.email
   - git config --global user.email "Your Email address on Github"
