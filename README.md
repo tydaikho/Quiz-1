@@ -13,6 +13,13 @@ Simple QUIZ application to demonstrate some andoid features
   - Layout designs
   - ActionBar options
   
+  
+  ### Git Help Urls
+  
+  - https://tutorialzine.com/2016/06/learn-git-in-30-minutes
+  - https://learngitbranching.js.org/
+  - https://try.github.io/levels/1/challenges/1
+  
   ## Git Command Line 
   - brew install git //Installing git
 	- git --version
