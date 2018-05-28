@@ -19,6 +19,7 @@ Simple QUIZ application to demonstrate some andoid features
   - https://tutorialzine.com/2016/06/learn-git-in-30-minutes
   - https://learngitbranching.js.org/
   - https://try.github.io/levels/1/challenges/1
+  - https://www.atlassian.com/git/tutorials
   
   ## Git Command Line 
   - brew install git //Installing git
