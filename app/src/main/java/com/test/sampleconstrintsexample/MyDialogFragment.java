@@ -1,6 +1,4 @@
 package com.test.sampleconstrintsexample;
-
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -12,7 +10,7 @@ import android.widget.Toast;
 public class MyDialogFragment extends DialogFragment implements DialogInterface.OnClickListener
 {
 
-//Second commit test by Yash
+//Second commit test by Pritesh Patel
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState)
